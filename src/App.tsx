@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
-import ProductPage from "./pages/ProductPage";
+import ProductPage from "./pages/staff/ProductPage";
 import AppLayout from "./components/layout/AppLayout";
-import HistoryPage from "./pages/HistoryPage";
+import HistoryPage from "./pages/staff/HistoryPage";
 
 function RouteApp() {
   return (
