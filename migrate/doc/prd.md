@@ -17,3 +17,6 @@ History memakai dua kolom seperti POSLayout: daftar di kiri, detail di kanan. Pa
 │                                       │ Total       Paid: Cash    │
 │                                       │ [Print] [Email] [Refund]  │
 └───────────────────────────────────────┴───────────────────────────┘
+
+
+Signup publik selalu jadi cashier; admin pertama dibuat lewat seed/script, admin lain dipromosikan oleh admin
