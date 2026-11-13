@@ -22,7 +22,6 @@ export default function Profile() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" side="bottom" sideOffset={8} className="w-56 p-1.5">
-        {/* Bagian Atas: Data Login */}
         <div className="flex items-center gap-2.5 px-2 py-2">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
             <User className="size-4 text-muted-foreground" />
@@ -39,7 +38,6 @@ export default function Profile() {
 
         <DropdownMenuSeparator />
 
-        {/* Bagian Bawah: Tombol Logout */}
         <DropdownMenuItem className="text-destructive hover:bg-destructive/10 hover:text-destructive focus:bg-destructive/10 focus:text-destructive">
           <LogOut className="size-4" />
           <span>Logout</span>

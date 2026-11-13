@@ -25,16 +25,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="flex h-12 w-full items-center justify-between gap-4 rounded-xl bg-popover p-2">
-      {/* Brand Logo / Text */}
+    <header className="flex h-12 w-full items-center justify-between gap-2 sm:gap-4 rounded-xl bg-popover px-2.5 sm:px-3 py-1.5 shadow-xs">
       <div className="flex items-center">
-        <LogoIcon />
-        <span className="text-xl font-bold tracking-tight text-foreground select-none">
+        <LogoIcon className="size-8 sm:size-9" />
+        <span className="text-lg sm:text-xl font-bold tracking-tight text-foreground select-none">
           ashier
         </span>
       </div>
 
-      {/* Navigation Tabs (Product & History) */}
       <nav className="flex items-center gap-1">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -43,7 +41,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "inline-flex items-center gap-2 rounded-lg px-3 py-1 text-sm font-medium transition-all select-none border border-border/40",
+                "inline-flex items-center gap-1.5 sm:gap-2 rounded-lg px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium transition-all select-none border border-border/40",
                 item.isActive
                   ? "bg-primary text-primary-foreground shadow-xs"
                   : "text-muted-foreground hover:bg-background/80 hover:text-foreground hover:border-border"
@@ -56,7 +54,6 @@ export default function Navbar() {
         })}
       </nav>
 
-      {/* Right Side: Profile Avatar with Dropdown */}
       <div className="flex items-center">
         <Profile />
       </div>
