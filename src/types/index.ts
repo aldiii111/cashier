@@ -39,13 +39,18 @@ export interface Order {
   tableNumber?: string;
   status: OrderStatus;
   payment: PaymentMethod;
-  item: OrderItem[];
+  items: OrderItem[];
   subtotal: number;
   discount?: number;
   tax?: number;
   total: number;
   cashierId: string;
   createdAt: string;
+}
+
+export interface OrderHistory {
+    orders: Order[];
+    pagination: Pagination;
 }
 
 // client state
@@ -68,6 +73,13 @@ export interface ApiResponse<T> {
   data: T;
 }
 
+export interface Pagination {
+    page: number;
+    limit: number;
+    totalItems: number;
+    totalPages: number;
+}
+
 // payload
 export interface CreateOrderPayload {
     customerName: string
@@ -79,4 +91,16 @@ export interface CreateOrderPayload {
         quantity: number
         notes?: string
     }[]
+}
+
+// role
+export interface LoginPayload {
+  email: string;
+  password: string;
+}
+
+export interface SignupPayload {
+  name: string;
+  email: string;
+  password: string;
 }
