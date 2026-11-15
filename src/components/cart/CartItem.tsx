@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
@@ -15,8 +17,7 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
   const totalPrice = dish.price * quantity;
 
   return (
-    <div className="flex gap-2.5 rounded-xl border border-border/40 bg-card p-2.5 transition-colors hover:border-border/80">
-      {/* Gambar Dish */}
+    <div className="flex gap-2.5 rounded-xl border border-foreground/10 bg-card p-2.5 transition-colors hover:border-border/80">
       <div className="relative size-14 shrink-0 overflow-hidden rounded-lg bg-muted">
         {dish.image ? (
           <Image
@@ -33,7 +34,6 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
         )}
       </div>
 
-      {/* Info Dish & Kontrol Quantity */}
       <div className="flex flex-1 min-w-0 flex-col justify-between gap-1.5">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
@@ -62,18 +62,14 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
         </div>
 
         <div className="flex items-center justify-between gap-2">
-          <span className="text-xs font-semibold text-primary">
-            ${totalPrice.toFixed(2)}
-          </span>
-
-          <div className="flex items-center gap-1.5 rounded-lg bg-muted/60 p-0.5">
+          <div className="flex items-center gap-1.5">
             <Button
               type="button"
               variant="ghost"
               size="icon-xs"
               onClick={() => onDecrease?.(dish.id)}
               disabled={quantity <= 1}
-              className="size-5 rounded-md hover:bg-background"
+              className="size-5.5 rounded-[5px] bg-muted"
               aria-label="Decrease quantity"
             >
               <Minus className="size-3" />
@@ -88,12 +84,16 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
               variant="ghost"
               size="icon-xs"
               onClick={() => onIncrease?.(dish.id)}
-              className="size-5 rounded-md hover:bg-background"
+              className="size-5.5 rounded-[5px] bg-primary hover:bg-primary/80 hover:text-white text-white"
               aria-label="Increase quantity"
             >
               <Plus className="size-3" />
             </Button>
           </div>
+
+          <span className="text-xs font-semibold text-primary">
+            ${totalPrice.toFixed(2)}
+          </span>
         </div>
       </div>
     </div>

@@ -5,6 +5,23 @@ import CustomerInfo from "./CustomerInfo";
 import PriceBreakdown from "./CartSummary/PriceBreakdown";
 import ProcessButton from "./CartSummary/ProcessButton";
 import { Separator } from "../ui/separator";
+import type { CartItem } from "@/src/types";
+
+// TODO: Dummy sementara untuk melihat tampilan cart item
+const DUMMY_CART_ITEMS: CartItem[] = [
+  {
+    dish: {
+      id: "dish-1",
+      name: "Zesty Salmon Bowl",
+      price: 14.5,
+      category: "Main Dish",
+      stock: "Available",
+      image: "/1.webp",
+    },
+    quantity: 1,
+    notes: "No Tomato · Extra Mayo",
+  },
+];
 
 function CartSidebar() {
   return (
@@ -21,7 +38,7 @@ function CartSidebar() {
       <Separator />
 
       <ScrollArea className="flex-1 min-h-0">
-        <CartList />
+        <CartList items={DUMMY_CART_ITEMS} />
       </ScrollArea>
 
       <Card size="sm" className="p-3 gap-3">
