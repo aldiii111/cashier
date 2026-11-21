@@ -1,20 +1,15 @@
-import CartItem from "./CartItem";
-import type { CartItem as CartItemType } from "@/src/types";
+import React from "react";
 
 interface CartListProps {
-  items?: CartItemType[];
-  onIncrease?: (dishId: string) => void;
-  onDecrease?: (dishId: string) => void;
-  onRemove?: (dishId: string) => void;
+  children: React.ReactNode;
+  isEmpty: Boolean;
 }
 
 function CartList({
-  items = [],
-  onIncrease,
-  onDecrease,
-  onRemove,
+  children,
+  isEmpty = false,
 }: CartListProps) {
-  if (items.length === 0) {
+  if (isEmpty) {
     return (
       <div className="flex flex-col items-center justify-center py-10 text-center text-muted-foreground">
         <p className="text-xs font-medium">Cart is empty</p>
@@ -27,15 +22,7 @@ function CartList({
 
   return (
     <div className="flex flex-col gap-2 pr-1">
-      {items.map((cartItem) => (
-        <CartItem
-          key={cartItem.dish.id}
-          item={cartItem}
-          onIncrease={onIncrease}
-          onDecrease={onDecrease}
-          onRemove={onRemove}
-        />
-      ))}
+      {children}
     </div>
   );
 }

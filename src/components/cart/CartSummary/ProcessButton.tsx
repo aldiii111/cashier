@@ -30,7 +30,7 @@ function ProcessButton({
           <span>Processing...</span>
         </>
       ) : (
-        <span className="flex w-full justify-center items-center justify-between">
+        <span className="flex w-full justify-center items-center">
           <span>Process Order</span>
           {typeof total === "number" && (
             <span className="font-bold">${total.toFixed(2)}</span>

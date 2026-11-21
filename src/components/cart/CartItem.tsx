@@ -26,6 +26,7 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
             fill
             sizes="56px"
             className="object-cover"
+            loading="eager"
           />
         ) : (
           <div className="flex size-full items-center justify-center text-[10px] text-muted-foreground">
@@ -91,7 +92,7 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }: CartItemProps) {
             </Button>
           </div>
 
-          <span className="text-xs font-semibold text-primary">
+          <span className="text-xs font-semibold text-foreground">
             ${totalPrice.toFixed(2)}
           </span>
         </div>

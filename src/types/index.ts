@@ -40,7 +40,7 @@ export interface Order {
   status: OrderStatus;
   payment: PaymentMethod;
   items: OrderItem[];
-  subtotal: number;
+  subtotal?: number;
   discount?: number;
   tax?: number;
   total: number;
