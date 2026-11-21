@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
-import type { CartItem as CartItemType } from "@/src/types";
+import type { CartItem as CartItemType } from "../types";
 
 interface CartItemProps {
   item: CartItemType;

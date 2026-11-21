@@ -1,4 +1,4 @@
-import CartSidebar from "@/src/components/cart/CartSidebar";
+import { CartSidebar } from "@/src/features/cart";
 import Navbar from "@/src/components/navbar/Navbar";
 
 export default function CashierLayout({

@@ -1,10 +1,5 @@
 function CardProduct() {
-  return (
-    <div>
-      CardProduct
-    </div>
-  );
+  return <div>CardProduct</div>;
 }
 
 export default CardProduct;
-

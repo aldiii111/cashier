@@ -2,13 +2,10 @@ import React from "react";
 
 interface CartListProps {
   children: React.ReactNode;
-  isEmpty: Boolean;
+  isEmpty?: boolean;
 }
 
-function CartList({
-  children,
-  isEmpty = false,
-}: CartListProps) {
+function CartList({ children, isEmpty = false }: CartListProps) {
   if (isEmpty) {
     return (
       <div className="flex flex-col items-center justify-center py-10 text-center text-muted-foreground">
@@ -20,11 +17,7 @@ function CartList({
     );
   }
 
-  return (
-    <div className="flex flex-col gap-2 pr-1">
-      {children}
-    </div>
-  );
+  return <div className="flex flex-col gap-2 pr-1">{children}</div>;
 }
 
 export default CartList;

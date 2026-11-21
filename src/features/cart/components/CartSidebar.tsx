@@ -1,14 +1,14 @@
 import { Card, CardContent } from "@/src/components/ui/card";
 import { ScrollArea } from "@/src/components/ui/scroll-area";
+import CartItem from "./CartItem";
 import CartList from "./CartList";
 import CustomerInfo from "./CustomerInfo";
-import PriceBreakdown from "./CartSummary/PriceBreakdown";
-import ProcessButton from "./CartSummary/ProcessButton";
-import { Separator } from "../ui/separator";
-import type { CartItem } from "@/src/types";
+import PriceBreakdown from "./PriceBreakdown";
+import ProcessButton from "./ProcessButton";
+import { Separator } from "@/src/components/ui/separator";
+import type { CartItem as CartItemType } from "../types";
 
-// TODO: Dummy sementara untuk melihat tampilan cart item
-const DUMMY_CART_ITEMS: CartItem[] = [
+const DUMMY_CART_ITEMS: CartItemType[] = [
   {
     dish: {
       id: "dish-1",
@@ -38,7 +38,11 @@ function CartSidebar() {
       <Separator />
 
       <ScrollArea className="flex-1 min-h-0">
-        <CartList items={DUMMY_CART_ITEMS} />
+        <CartList isEmpty={DUMMY_CART_ITEMS.length === 0}>
+          {DUMMY_CART_ITEMS.map((item) => (
+            <CartItem key={item.dish.id} item={item} />
+          ))}
+        </CartList>
       </ScrollArea>
 
       <Card size="sm" className="p-3 gap-3">

@@ -4,7 +4,6 @@ export type OrderType = "Dine in" | "Take away";
 export type OrderStatus = "Completed" | "Refunded";
 export type PaymentMethod = "Cash" | "Qris";
 
-// backend data
 export interface User {
   id: string;
   name: string;
@@ -21,7 +20,6 @@ export interface Dish {
   image?: string;
 }
 
-// snapshot order
 export interface OrderItem {
   id: string;
   dishId: string;
@@ -48,59 +46,14 @@ export interface Order {
   createdAt: string;
 }
 
-export interface OrderHistory {
-    orders: Order[];
-    pagination: Pagination;
-}
-
-// client state
-export interface CartItem {
-  dish: Dish;
-  quantity: number;
-  notes?: string;
-}
-
-export interface CartState {
-  customerName: string;
-  orderType: OrderType;
-  tableNumber?: string;
-  items: CartItem[];
-}
-
-// api kontrak
 export interface ApiResponse<T> {
   message?: string;
   data: T;
 }
 
 export interface Pagination {
-    page: number;
-    limit: number;
-    totalItems: number;
-    totalPages: number;
-}
-
-// payload
-export interface CreateOrderPayload {
-    customerName: string
-    orderType: OrderType
-    tableNumber?: string
-    payment: PaymentMethod
-    items: {
-        dishId: string
-        quantity: number
-        notes?: string
-    }[]
-}
-
-// role
-export interface LoginPayload {
-  email: string;
-  password: string;
-}
-
-export interface SignupPayload {
-  name: string;
-  email: string;
-  password: string;
+  page: number;
+  limit: number;
+  totalItems: number;
+  totalPages: number;
 }
